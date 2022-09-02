@@ -1,13 +1,13 @@
 package com.mohakchavan.applists.inventory
 
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.mohakchavan.applists.database.DatabaseHelper
 import com.mohakchavan.applists.database.entity.inventory.Item
 import kotlinx.coroutines.launch
 
 class InventoryViewModel(private val databaseHelper: DatabaseHelper) : ViewModel() {
+
+    val allItems: LiveData<List<Item>> = databaseHelper.getAllItems().asLiveData()
 
     fun addItem(name: String, price: String, count: String) {
         insertItem(getNewItem(name, price, count))
