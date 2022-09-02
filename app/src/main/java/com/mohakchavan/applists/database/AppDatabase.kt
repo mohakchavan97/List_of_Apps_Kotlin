@@ -43,7 +43,7 @@ abstract class AppDatabase : RoomDatabase() {
                 AppDatabase::class.java,
                 "listofapps"
             )
-                .fallbackToDestructiveMigration() // Will destroy the data and rebuild the database in case of migration
+//                .fallbackToDestructiveMigration() // Will destroy the data and rebuild the database in case of migration
                 .createFromAsset("database/bus_schedule.db")
                 .also {
                     Log.e("AppDatabase", "buildDatabase: ")
