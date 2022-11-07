@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mohakchavan.applists">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-feature
         android:name="android.software.leanback"
@@ -8,11 +7,20 @@
     <uses-feature
         android:name="android.hardware.touchscreen"
         android:required="false" />
-
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="true" />
 
     <uses-permission android:name="android.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+
 
     <application
         android:name=".BaseApplication"
@@ -23,8 +31,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppsList">
         <activity
+            android:name=".bluetooth.BluetoothActivity"
+            android:exported="false" />
+        <activity
             android:name=".alarmExample.AlarmActivity"
             android:exported="false" />
+
         <receiver android:name=".alarmExample.AlarmReceiver" />
 
         <activity
