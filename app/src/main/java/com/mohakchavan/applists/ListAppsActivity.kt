@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter
 import androidx.appcompat.app.AppCompatActivity
 import com.mohakchavan.applists.affirmations.Affirmations
 import com.mohakchavan.applists.alarmExample.AlarmActivity
+import com.mohakchavan.applists.bluetooth.BluetoothActivity
 import com.mohakchavan.applists.busschedule.BusScheduleMainActivity
 import com.mohakchavan.applists.cupcake.CupCakeMainActivity
 import com.mohakchavan.applists.databinding.ActivityListAppsBinding
@@ -37,6 +38,7 @@ class ListAppsActivity : AppCompatActivity() {
             getString(R.string.inventory),
 
 
+            getString(R.string.bluetooth),
             "Alarm Example"
         )
 
@@ -54,6 +56,7 @@ class ListAppsActivity : AppCompatActivity() {
                 7 -> startActivity(Intent(this@ListAppsActivity, BusScheduleMainActivity::class.java))
                 8 -> startActivity(Intent(this@ListAppsActivity, InventoryMainActivity::class.java))
 
+                9 -> startActivity(Intent(this@ListAppsActivity, BluetoothActivity::class.java))
                 else -> startActivity(Intent(this@ListAppsActivity, AlarmActivity::class.java))
             }
         }
