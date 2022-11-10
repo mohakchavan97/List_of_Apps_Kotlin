@@ -17,6 +17,41 @@ class InventoryViewModel(private val databaseHelper: DatabaseHelper) : ViewModel
         return !(name.isBlank() || price.isBlank() || count.isBlank())
     }
 
+    fun retrieveItem(id: Int): LiveData<Item> {
+        return databaseHelper.getItem(id).asLiveData()
+    }
+
+    fun sellItem(item: Item) {
+        if (item.quantityInStock > 0) {
+            updateItem(item.copy(quantityInStock = item.quantityInStock.dec()))
+        }
+    }
+
+    fun deleteItem(item: Item) {
+        viewModelScope.launch {
+            databaseHelper.deleteItem(item)
+        }
+    }
+
+    fun updateItem(id: Int, name: String, price: String, count: String){
+        updateItem(generateUpdatedItem(id, name, price, count))
+    }
+
+    private fun updateItem(item: Item) {
+        viewModelScope.launch {
+            databaseHelper.updateItem(item)
+        }
+    }
+
+    private fun generateUpdatedItem(id: Int, name: String, price: String, count: String): Item {
+        return Item(
+            id = id,
+            itemName = name,
+            itemPrice = price.toDouble(),
+            quantityInStock = count.toInt()
+        )
+    }
+
     private fun insertItem(item: Item) {
         viewModelScope.launch {
             databaseHelper.insertItem(item)
