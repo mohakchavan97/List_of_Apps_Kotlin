@@ -24,7 +24,7 @@ android {
     buildTypes {
 
         debug {
-            resValue("string", "PORT_NUMBER","8081")
+            resValue("string", "PORT_NUMBER", "8081")
         }
 
         release {
@@ -75,8 +75,10 @@ dependencies {
     // Room
     implementation 'androidx.room:room-runtime:2.4.3'
     implementation 'androidx.room:room-ktx:2.4.3'
-    implementation 'com.google.android.gms:play-services-location:21.0.0'
     kapt 'androidx.room:room-compiler:2.4.3'
+
+    // Location
+    implementation 'com.google.android.gms:play-services-location:21.0.0'
 
     // Android Debug Database
 //    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
