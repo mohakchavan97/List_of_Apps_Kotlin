@@ -142,4 +142,6 @@
 
     <string name="bluetooth">Bluetooth</string>
 
+    <string name="dev_byte_app">DevByte Viewer</string>
+
 </resources>

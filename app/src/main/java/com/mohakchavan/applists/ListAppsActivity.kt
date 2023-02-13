@@ -10,6 +10,7 @@ import com.mohakchavan.applists.bluetooth.BluetoothActivity
 import com.mohakchavan.applists.busschedule.BusScheduleMainActivity
 import com.mohakchavan.applists.cupcake.CupCakeMainActivity
 import com.mohakchavan.applists.databinding.ActivityListAppsBinding
+import com.mohakchavan.applists.devByteApp.ui.DevByteActivity
 import com.mohakchavan.applists.inventory.InventoryMainActivity
 import com.mohakchavan.applists.marsphotos.MarsPhotosMainActivity
 import com.mohakchavan.applists.sports.SportsMainActivity
@@ -36,6 +37,7 @@ class ListAppsActivity : AppCompatActivity() {
             getString(R.string.mars_photos),
             getString(R.string.bus_schedule),
             getString(R.string.inventory),
+            getString(R.string.dev_byte_app),
 
 
             getString(R.string.bluetooth),
@@ -55,8 +57,9 @@ class ListAppsActivity : AppCompatActivity() {
                 6 -> startActivity(Intent(this@ListAppsActivity, MarsPhotosMainActivity::class.java))
                 7 -> startActivity(Intent(this@ListAppsActivity, BusScheduleMainActivity::class.java))
                 8 -> startActivity(Intent(this@ListAppsActivity, InventoryMainActivity::class.java))
+                9 -> startActivity(Intent(this@ListAppsActivity, DevByteActivity::class.java))
 
-                9 -> startActivity(Intent(this@ListAppsActivity, BluetoothActivity::class.java))
+                10 -> startActivity(Intent(this@ListAppsActivity, BluetoothActivity::class.java))
                 else -> startActivity(Intent(this@ListAppsActivity, AlarmActivity::class.java))
             }
         }

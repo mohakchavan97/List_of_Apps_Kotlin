@@ -5,7 +5,9 @@ import android.util.Log
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.mohakchavan.applists.database.entity.devByteApp.DatabaseVideo
 import com.mohakchavan.applists.database.dao.busschedule.ScheduleDao
+import com.mohakchavan.applists.database.dao.devByteApp.VideoDao
 import com.mohakchavan.applists.database.dao.inventory.ItemDao
 import com.mohakchavan.applists.database.entity.busschedule.Schedule
 import com.mohakchavan.applists.database.entity.inventory.Item
@@ -13,7 +15,8 @@ import com.mohakchavan.applists.database.entity.inventory.Item
 @Database(
     entities = [
         Schedule::class,
-        Item::class
+        Item::class,
+        DatabaseVideo::class
     ],
     version = 1,
     exportSchema = false
@@ -23,6 +26,8 @@ abstract class AppDatabase : RoomDatabase() {
     abstract fun scheduleDao(): ScheduleDao
 
     abstract fun itemDao(): ItemDao
+
+    abstract fun videoDao(): VideoDao
 
     companion object {
 

@@ -82,6 +82,9 @@
             android:name=".inventory.InventoryMainActivity"
             android:exported="false"
             android:theme="@style/Theme.InventoryApp" />
+        <activity
+            android:name=".devByteApp.ui.DevByteActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
