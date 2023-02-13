@@ -3,7 +3,7 @@ package com.mohakchavan.java_kotlin_lib
 import java.io.File
 import java.util.*
 
-fun main(args: Array<String>) {
+fun main() {
 
     val scanner=Scanner(File("E:\\Downloads\\Automata Transactions.csv"))
     scanner.useDelimiter("\n")

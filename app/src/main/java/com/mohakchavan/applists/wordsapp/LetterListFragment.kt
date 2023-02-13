@@ -75,11 +75,13 @@ class LetterListFragment : Fragment() {
         chooseLayout()
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.layout_menu,menu)
         setIcon(menu.findItem(R.id.action_switch_layout))
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.action_switch_layout->{
