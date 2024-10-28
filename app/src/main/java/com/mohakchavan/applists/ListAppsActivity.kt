@@ -43,6 +43,7 @@ class ListAppsActivity : AppCompatActivity() {
             getString(R.string.bluetooth),
             "Alarm Example"
         )
+//        JSONObject
 
         binding.listOfApps.adapter = ArrayAdapter<String>(this, com.google.android.material.R.layout.support_simple_spinner_dropdown_item, listApps)
 
